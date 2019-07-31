@@ -1,7 +1,7 @@
 #!/bin/bash
 export DEBIAN_FRONTEND=noninteractive
 
-sudo apt-get update
+sudo apt update
 
 echo -e "slapd slapd/root_password password admin" |sudo debconf-set-selections
 echo -e "slapd slapd/root_password_again password admin" |sudo debconf-set-selections
@@ -18,7 +18,7 @@ echo -e "slapd slapd/move_old_database boolean true" |sudo debconf-set-selection
 echo -e "slapd slapd/allow_ldap_v2 boolean false" |sudo debconf-set-selections
 echo -e "slapd slapd/no_configuration boolean false" |sudo debconf-set-selections
 
-sudo apt-get install -y slapd ldap-utils
+sudo apt install -y slapd ldap-utils
 
 sudo ufw allow ldap
 
@@ -41,6 +41,6 @@ loginShell: /bin/dash
 homeDirectory: /home/student
 EOF
 
-$ ldapadd -x -D cn=admin,dc=clemson,dc=cloudlab,dc=us -w admin -f basedn.ldif
-#$ ldapadd -x -D cn=admin,dc=clemson,dc=cloudlab,dc=us -w admin -f users.ldif
+ldapadd -x -D cn=admin,dc=clemson,dc=cloudlab,dc=us -w admin -f basedn.ldif
+ldapadd -x -D cn=admin,dc=clemson,dc=cloudlab,dc=us -w admin -f users.ldif
 
