@@ -42,5 +42,5 @@ homeDirectory: /home/student
 EOF
 
 $ ldapadd -x -D cn=admin,dc=clemson,dc=cloudlab,dc=us -w admin -f basedn.ldif
-$ ldapadd -x -D cn=admin,dc=clemson,dc=cloudlab,dc=us -w admin -f users.ldif
+#$ ldapadd -x -D cn=admin,dc=clemson,dc=cloudlab,dc=us -w admin -f users.ldif
 
